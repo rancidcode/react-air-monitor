@@ -1,0 +1,198 @@
+$main-dark  :#394656;
+$dark700    :#949fac;
+$main-light :#f9fafc;
+$light800   :#f4f5f7;
+
+html,
+body {
+    height     : 100%;
+    width      : 100%;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+h3 {
+    margin-bottom: 1rem;
+}
+
+p,
+h4 {
+    margin: 0.5rem
+}
+
+@mixin flex ($direction, $justify-content) {
+    display        : flex;
+    justify-content: $justify-content;
+    align-items    : center;
+    flex-wrap      : wrap;
+    flex-direction : $direction;
+    box-sizing     : border-box;
+
+    @if $direction==column {
+        height: 100%;
+    }
+
+    @else {
+        width: 100%;
+    }
+}
+
+#whole-page {
+    height        : 100vh;
+    min-height    : 600px;
+    width         : 100vw;
+    display       : flex;
+    flex-direction: row;
+    box-sizing    : border-box;
+}
+
+#navbar {
+    @include flex(column, center);
+    width           : 4rem;
+    background-color: #394656;
+}
+
+.icon-outer {
+    @include flex(row, center);
+    margin       : 0.5rem 0;
+    border-radius: 50%;
+    width        : 2.5rem;
+    height       : 2.5rem;
+    cursor       : pointer;
+}
+
+.selected-nav {
+    background-color: $dark700;
+}
+
+#main {
+    @include flex(column, center);
+    flex            : 1;
+    background-color: $main-light;
+
+    .main-top {
+        @include flex(row, center);
+        flex: 2;
+
+        .live-updates {
+            @include flex(column, flex-start);
+            flex       : 2;
+            padding    : 2rem;
+            align-items: flex-start;
+
+
+            .date-container {
+                @include flex(row, center);
+                width           : 100%;
+                background-color: $light800;
+                height          : 2.5rem;
+                border          : 0.1px solid #d4c8c8;
+                margin-bottom   : 1rem;
+                border-radius   : 0.5rem
+            }
+        }
+
+        .chart {
+            @include flex(column, center);
+            align-items: flex-start;
+            flex       : 3;
+            padding    : 2rem;
+        }
+    }
+
+    .main-bottom {
+        @include flex(column, center);
+        align-items: flex-start;
+        flex       : 1;
+        width      : 100%;
+        padding    : 0 2rem;
+        box-sizing : border-box;
+
+        .outer-container {
+            @include flex(row, space-between);
+            border-bottom: 0.1px solid #d4c8c8;
+        }
+    }
+}
+
+
+.box-container {
+    @include flex(row, space-between);
+    align-items: flex-end;
+    flex       : 1;
+
+    .box {
+        @include flex(row, flex-start);
+        width        : 48.8%;
+        height       : 30%;
+        border-radius: 0.5rem;
+        padding      : 1rem;
+
+        .icon {
+            background-color: $light800;
+            margin-right    : 1rem;
+        }
+    }
+}
+
+.white-border {
+    flex-direction  : column;
+    border          : 0.1px solid #d4c8c8;
+    background-color: #ffffff;
+    border-radius   : 0 0 0.5rem 0.5rem;
+    align-items     : center;
+    justify-content : center;
+
+    .title {
+        @include flex(row, space-around);
+        margin-bottom: 1rem;
+    }
+}
+
+.table {
+    @include flex(column, flex-start);
+    padding: 2rem;
+    flex   : 1;
+}
+
+table {
+    font-family    : arial, sans-serif;
+    border-collapse: collapse;
+    width          : 100%;
+}
+
+td,
+th {
+    border    : 0.5px solid $main-dark;
+    text-align: left;
+    padding   : 8px;
+}
+
+th {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: none;
+}
+
+.pagination {
+    @include flex(row, center);
+
+    .page-item {
+        @include flex(row, center);
+        width : 2rem;
+        height: 2rem;
+        margin: 1rem 0.2rem;
+        border: 0.5px solid $main-dark;
+        cursor: pointer;
+    }
+
+    .selected {
+        background-color: $main-dark;
+        color           : white;
+    }
+}
