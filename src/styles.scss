@@ -79,7 +79,7 @@ h4 {
 
         .live-updates {
             @include flex(column, flex-start);
-            flex       : 2;
+            flex       : 1;
             padding    : 2rem;
             align-items: flex-start;
 
@@ -98,7 +98,7 @@ h4 {
         .chart {
             @include flex(column, center);
             align-items: flex-start;
-            flex       : 3;
+            flex       : 4;
             padding    : 2rem;
         }
     }
@@ -126,7 +126,7 @@ h4 {
 
     .box {
         @include flex(row, flex-start);
-        width        : 48.8%;
+        width        : 100%;
         height       : 30%;
         border-radius: 0.5rem;
         padding      : 1rem;
@@ -195,4 +195,8 @@ tr:nth-child(even) {
         background-color: $main-dark;
         color           : white;
     }
+}
+
+.parameter-box {
+    width: 120px;
 }

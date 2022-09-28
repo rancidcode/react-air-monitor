@@ -3,7 +3,11 @@ import React from "react";
 import Navbar from "../ui/Navbar";
 import Pagination from "../ui/Pagination";
 
-const Table = ({ dataset }) => {
+import { DataContext } from "../../App";
+
+const Table = () => {
+  const dataset = React.useContext(DataContext);
+
   const [currentPage, setCurrentPage] = React.useState(1);
   const [postsPerPage] = React.useState(15);
 

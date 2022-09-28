@@ -4,15 +4,15 @@ import LiveUpdates from "./LiveUpdates";
 import RecentList from "./RecentList";
 import Chart from "./Chart";
 
-const Main = ({ data, dataset }) => {
+const Main = ({ data }) => {
   return (
     <div id="main">
       <div className="main-top">
         <LiveUpdates data={data} />
-        <Chart dataset={dataset} />
+        <Chart />
       </div>
       <div className="main-bottom">
-        <RecentList dataset={dataset} />
+        <RecentList />
       </div>
     </div>
   );

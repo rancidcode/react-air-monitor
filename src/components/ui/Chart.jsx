@@ -8,11 +8,15 @@ import {
   Tooltip,
 } from "recharts";
 
-const Chart = ({ dataset }) => {
+import { DataContext } from "../../App";
+
+const Chart = () => {
+  const dataset = React.useContext(DataContext);
+
   const [selected, setSelected] = React.useState("airQuality");
 
   let data = [];
-  for (let i = dataset.length - 10; i < dataset.length; i++) {
+  for (let i = dataset.length - 20; i < dataset.length; i++) {
     data.push({
       name: dataset[i].time.substring(0, 5),
       heatIndex: dataset[i].heatIndex,
@@ -37,7 +41,7 @@ const Chart = ({ dataset }) => {
         </div>
 
         <AreaChart
-          width={700}
+          width={1000}
           height={250}
           data={data}
           margin={{ top: 10, right: 30, left: 0, bottom: 0 }}

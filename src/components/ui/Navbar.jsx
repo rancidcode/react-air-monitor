@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
 import { AiOutlineHome } from "react-icons/ai";
-import { AiOutlineLineChart } from "react-icons/ai";
 import { BiTable } from "react-icons/bi";
 
 const Navbar = ({ id }) => {
@@ -18,14 +17,6 @@ const Navbar = ({ id }) => {
         }}
       >
         <AiOutlineHome style={style} />
-      </div>
-      <div
-        className={id === "chart" ? "icon-outer selected-nav" : "icon-outer"}
-        onClick={() => {
-          navigate("/chart");
-        }}
-      >
-        <AiOutlineLineChart style={style} />
       </div>
       <div
         className={id === "table" ? "icon-outer selected-nav" : "icon-outer"}
