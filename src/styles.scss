@@ -11,7 +11,9 @@ body {
 }
 
 body {
-    margin: 0;
+    margin          : 0;
+    min-width       : 1200px;
+    background-color: $main-light;
 }
 
 h3 {
@@ -41,9 +43,6 @@ h4 {
 }
 
 #whole-page {
-    height        : 100vh;
-    min-height    : 600px;
-    width         : 100vw;
     display       : flex;
     flex-direction: row;
     box-sizing    : border-box;
@@ -53,6 +52,7 @@ h4 {
     @include flex(column, center);
     width           : 4rem;
     background-color: #394656;
+    position        : fixed;
 }
 
 .icon-outer {
@@ -70,8 +70,9 @@ h4 {
 
 #main {
     @include flex(column, center);
-    flex            : 1;
-    background-color: $main-light;
+    flex        : 1;
+    padding-left: 4rem;
+
 
     .main-top {
         @include flex(row, center);
@@ -82,6 +83,7 @@ h4 {
             flex       : 1;
             padding    : 2rem;
             align-items: flex-start;
+            min-width  : 310px;
 
 
             .date-container {
@@ -105,11 +107,12 @@ h4 {
 
     .main-bottom {
         @include flex(column, center);
-        align-items: flex-start;
-        flex       : 1;
-        width      : 100%;
-        padding    : 0 2rem;
-        box-sizing : border-box;
+        align-items  : flex-start;
+        flex         : 1;
+        width        : 100%;
+        padding      : 2rem 2rem;
+        box-sizing   : border-box;
+        margin-bottom: 2rem;
 
         .outer-container {
             @include flex(row, space-between);
@@ -154,8 +157,9 @@ h4 {
 
 .table {
     @include flex(column, flex-start);
-    padding: 2rem;
-    flex   : 1;
+    padding     : 2rem;
+    padding-left: 6rem;
+    flex        : 1;
 }
 
 table {
